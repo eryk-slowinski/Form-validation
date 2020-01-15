@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="wrap">
+        <h3>Register</h3>
+        <div class="name">
+            <input type="text" placeholder="First name" class="field first-name">
+            <input type="text" placeholder="Last name" class="field last-name">
+            <p class="invalid-data wrong-name"></p>
+        </div>
+        <input type="text" placeholder="Email" class="field email">
+        <p class="invalid-data wrong-email"></p>
+        <input type="password" placeholder="Password" class="field password">
+        <input type="password" placeholder="Confirm password" class="field confirm-password">
+        <p class="invalid-data wrong-password"></p>
+        <div class="check">
+            <input type="checkbox" id="accept">
+            <label for="accept" class="check"> I accept the
+                <a href="#">Terms of Use</a> &
+                <a href="#">Privacy Policy</a>.</label>
+        </div>
+        <p class="invalid-data accept-terms"></p>
+        <div class="confirmation"></div>
+        <button type="submit" class="register-btn">Register now</button>
+        <p>Already have an account? <a href="#" class="has-account">Sign in</a></p>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>

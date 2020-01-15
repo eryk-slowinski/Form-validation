@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #63738A;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.invalid-data {
+    color: red;
+    font-size: 13px;
+}
+
+.require {
+    border: 1px solid red;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(196, 196, 196);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 40px;
+    background-color: rgb(196, 196, 196);
+    text-align: center;
+    margin: 10px 0 40px 0;
+}
+
+.name {
+    background-color: rgb(196, 196, 196);
+}
+
+
+.last-name {
+    float: right
+}
+
+.field {
+    margin: 10px 20px;
+    text-align: center;
+}
+
+input {
+    height: 33px;
+    border: 2px solid gray;
+}
+
+.check {
+    background-color: rgb(196, 196, 196);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.wrap a {
+    background-color: rgb(196, 196, 196);
+}
+
+.check a {
+    color: #398039;
+}
+
+input {
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.email-sent {
+    font-size: 17px;
+    background-color: rgb(87, 177, 51, .4);
+    border-left: 5px solid rgb(4, 131, 4, .8);
+    padding: 10px;
+}
+
+
+.register-btn {
+    font-size: 22px;
+    padding: 10px;
+    border: none;
+    margin: 40px 0;
+    color: #ddd;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(90, 181, 90, 1) 0%, rgb(51, 119, 51) 100%);
+}
+
+.wrap p {
+    background-color: rgb(196, 196, 196);
+    text-align: center;
+}
+
+.has-account {
+    color: rgb(66, 62, 62);
+}
