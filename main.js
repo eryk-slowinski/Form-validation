@@ -1,14 +1,12 @@
-const submitBtn = document.querySelector('.register-btn');
-
 function submitForm(event) {
     event.preventDefault();
-    handleName();
-    handleEmail();
-    handlePassword();
-    handleCheckbox();
+    const name = handleName();
+    const email = handleEmail();
+    const password = handlePassword();
+    const checkbox = handleCheckbox();
 
     const registrationConfirmDiv = document.querySelector('.confirmation');
-    if (handleName() && handleEmail() && handlePassword() && handleCheckbox()) {
+    if (name && email && password && checkbox) {
         registrationConfirmDiv.classList.add('email-sent');
         registrationConfirmDiv.textContent = 'We have sent you an email to activate your account';
     }
@@ -20,14 +18,12 @@ function handleName() {
     const wrongName = document.querySelector('.wrong-name');
 
     if (firstName.value.length >= 4 && lastName.value.length >= 4) {
-        firstName.classList.remove('require');
-        lastName.classList.remove('require');
+        operateClasses(true, firstName, lastName);
         wrongName.textContent = '';
         return true;
     } else {
         wrongName.textContent = 'First and last name has to be at least 4 characters';
-        firstName.classList.add('require');
-        lastName.classList.add('require');
+        operateClasses(false, firstName, lastName);
         return false;
     }
 }
@@ -55,23 +51,19 @@ function handlePassword() {
     const passwordExpression = /^(?=.*[A-Z])/;
 
     if (passwordExpression.test(password.value) === false) {
-        password.classList.add('require');
-        confirmPassword.classList.add('require');
+        operateClasses(false, password, confirmPassword);
         wrongpassword.textContent = 'Password must contain at least 1 uppercase alphabetical character'
         return false;
     } else if (password.value.length < 8) {
-        password.classList.add('require');
-        confirmPassword.classList.add('require');
+        operateClasses(false, password, confirmPassword);
         wrongpassword.textContent = 'Password must contain at least 8 characters';
         return false;
     } else if (password.value !== confirmPassword.value) {
-        password.classList.add('require');
-        confirmPassword.classList.add('require');
+        operateClasses(false, password, confirmPassword);
         wrongpassword.textContent = 'Passwords are not equal';
         return false;
     } else {
-        password.classList.remove('require');
-        confirmPassword.classList.remove('require');
+        operateClasses(true, password, confirmPassword);
         wrongpassword.textContent = '';
         return true;
     }
@@ -90,5 +82,14 @@ function handleCheckbox() {
     }
 }
 
+function operateClasses(bool, element1, element2) {
+    if (bool) {
+        element1.classList.remove('require');
+        element2.classList.remove('require');
+    } else {
+        element1.classList.add('require');
+        element2.classList.add('require');
+    }
+}
 
-submitBtn.addEventListener('click', submitForm);
+document.querySelector('.register-btn').addEventListener('click', submitForm);
