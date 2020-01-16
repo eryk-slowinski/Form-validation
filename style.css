@@ -8,19 +8,10 @@
     box-sizing: border-box;
 }
 
-.invalid-data {
-    color: red;
-    font-size: 13px;
-}
-
-.require {
-    border: 1px solid red;
-}
-
 .wrap {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
@@ -36,10 +27,10 @@ h3 {
     margin: 10px 0 40px 0;
 }
 
-.name {
+.name,
+.wrap a {
     background-color: rgb(196, 196, 196);
 }
-
 
 .last-name {
     float: right
@@ -53,28 +44,22 @@ h3 {
 input {
     height: 33px;
     border: 2px solid gray;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.check input {
+    height: auto;
 }
 
 .check {
-    background-color: rgb(196, 196, 196);
-}
-
-label {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.wrap a {
+    margin: 20px 0;
+    text-align: center;
     background-color: rgb(196, 196, 196);
 }
 
 .check a {
     color: #398039;
-}
-
-input {
-    background-color: #fff;
-    font-size: 15px;
 }
 
 .email-sent {
@@ -84,12 +69,11 @@ input {
     padding: 10px;
 }
 
-
 .register-btn {
     font-size: 22px;
     padding: 10px;
     border: none;
-    margin: 40px 0;
+    margin: 20px 0;
     color: #ddd;
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(90, 181, 90, 1) 0%, rgb(51, 119, 51) 100%);
@@ -102,4 +86,32 @@ input {
 
 .has-account {
     color: rgb(66, 62, 62);
+}
+
+.invalid-data {
+    color: red;
+    font-size: 13px;
+}
+
+.require {
+    border: 1px solid red;
+}
+
+@media (max-width: 980px) {
+    .wrap {
+        width: 70vw;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+    .wrap {
+        top: 10%;
+        width: 90vw;
+        padding: 5px;
+    }
 }
